@@ -108,70 +108,19 @@
             border-radius: 2px;
         }
 
-        /* Mekanisme */
-        .mekanisme-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        /* Carousel Peserta */
+        #peserta {
+            padding-top: 60px;
+            padding-bottom: 60px;
         }
 
-        .mekanisme-card {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-left: 4px solid var(--primary);
-            transition: transform 0.3s ease;
-        }
-
-        .mekanisme-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .mekanisme-card h3 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--primary);
-        }
-
-        .mekanisme-card h3 i {
-            color: var(--secondary);
-        }
-
-        /* Penilaian */
-        #penilaian {
-            background: var(--primary);
-            color: white;
-        }
-
-        #penilaian .section-title {
-            color: white;
-        }
-
-        #penilaian .section-title:after {
-            background: var(--secondary);
-        }
-
-        .penilaian-item {
-            background: rgba(255,255,255,0.1);
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border-left: 4px solid var(--secondary);
-        }
-
-        .penilaian-item h3 {
-            color: var(--secondary);
-        }
-
-        /* Galeri */
         .carousel {
             position: relative;
             overflow: hidden;
             border-radius: 8px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             height: 400px;
+            margin-bottom: 40px;
         }
 
         .carousel-inner {
@@ -213,11 +162,90 @@
             right: 20px;
         }
 
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Mekanisme Lomba */
+        .mekanisme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .mekanisme-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .mekanisme-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mekanisme-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+        }
+
+        .mekanisme-card h3 i {
+            color: var(--secondary);
+        }
+
+        /* Penilaian */
+        .penilaian-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .penilaian-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            border-top: 5px solid var(--secondary);
+            transition: transform 0.3s ease;
+        }
+
+        .penilaian-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .penilaian-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .penilaian-percentage {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* Galeri */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
-            margin-top: 40px;
         }
 
         .gallery-item {
@@ -336,6 +364,10 @@
                 width: 60px;
                 height: 60px;
             }
+            
+            .mekanisme-grid, .penilaian-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -355,26 +387,53 @@
         </div>
     </header>
 
+    <!-- Carousel Peserta -->
+    <section id="peserta">
+        <div class="container">
+            <h2 class="section-title">Peserta Lomba</h2>
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1581093458799-eea1af5d4f5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');">
+                        <div class="carousel-caption">
+                            <h3>Tim Paskibra SMAN 1 Disiplin Jaya</h3>
+                            <p>Juara 1 Lomba Baris Berbaris Tingkat Kota 2023</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1581094288336-8db0e19dec1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');">
+                        <div class="carousel-caption">
+                            <h3>Tim PMR SMAN 2 Patriot Bangsa</h3>
+                            <p>Juara 2 Lomba Baris Berbaris Tingkat Provinsi 2023</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1581094288336-8db0e19dec1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');">
+                        <div class="carousel-caption">
+                            <h3>Tim Pramuka SMKN 3 Teknologi Maju</h3>
+                            <p>Juara 3 Lomba Baris Berbaris Tingkat Nasional 2023</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-control next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
     <!-- Mekanisme Lomba -->
     <section id="mekanisme">
         <div class="container">
             <h2 class="section-title">Mekanisme Lomba</h2>
             <div class="mekanisme-grid">
                 <div class="mekanisme-card">
-                    <h3><i class="fas fa-users"></i> Peserta</h3>
-                    <p>Setiap tim terdiri dari 20-30 orang (termasuk komandan). Peserta adalah siswa aktif SMA/SMK sederajat.</p>
-                </div>
-                <div class="mekanisme-card">
-                    <h3><i class="fas fa-clipboard-list"></i> Pendaftaran</h3>
-                    <p>Pendaftaran dibuka hingga 10 November 2024. Formulir dapat diakses melalui tombol floating di pojok kanan bawah.</p>
+                    <h3><i class="fas fa-users"></i> Profil Peserta</h3>
+                    <p>Peserta adalah siswa aktif SMA/SMK sederajat se-Kota. Setiap sekolah dapat mengirimkan maksimal 2 tim. Setiap tim terdiri dari 20-30 orang (termasuk komandan dan pengibar bendera).</p>
                 </div>
                 <div class="mekanisme-card">
                     <h3><i class="fas fa-flag-checkered"></i> Teknis Lomba</h3>
-                    <p>Lomba dilaksanakan dalam 2 babak: penyisihan dan final. Setiap tim diberikan waktu 15 menit untuk menunjukkan kemampuan.</p>
+                    <p>Lomba dilaksanakan dalam 2 babak: penyisihan dan final. Setiap tim diberikan waktu 15 menit untuk menunjukkan kemampuan. Urutan penampilan ditentukan melalui undian sebelum lomba dimulai.</p>
                 </div>
                 <div class="mekanisme-card">
-                    <h3><i class="fas fa-award"></i> Penilaian</h3>
-                    <p>Penilaian dilakukan oleh dewan juri yang berkompeten di bidang baris-berbaris dari TNI dan praktisi pendidikan.</p>
+                    <h3><i class="fas fa-clipboard-check"></i> Sistem Penilaian</h3>
+                    <p>Penilaian dilakukan oleh dewan juri yang berkompeten di bidang baris-berbaris. Keputusan dewan juri bersifat mutlak dan tidak dapat diganggu gugat. Pengumuman pemenang dilakukan setelah seluruh tim selesai tampil.</p>
                 </div>
             </div>
         </div>
@@ -384,26 +443,38 @@
     <section id="penilaian">
         <div class="container">
             <h2 class="section-title">Item Penilaian</h2>
-            <div class="penilaian-list">
-                <div class="penilaian-item">
-                    <h3>Kekompakan Tim (30%)</h3>
-                    <p>Keserasian gerakan, kesatuan komando, dan koordinasi antar anggota tim.</p>
+            <div class="penilaian-grid">
+                <div class="penilaian-card">
+                    <div class="penilaian-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Kekompakan Tim</h3>
+                    <p>Keserasian gerakan, kesatuan komando, dan koordinasi antar anggota tim selama penampilan.</p>
+                    <div class="penilaian-percentage">30%</div>
                 </div>
-                <div class="penilaian-item">
-                    <h3>Ketepatan Gerakan (25%)</h3>
-                    <p>Akurasi dalam melaksanakan gerakan dasar PBB sesuai dengan peraturan.</p>
+                <div class="penilaian-card">
+                    <div class="penilaian-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Ketepatan Gerakan</h3>
+                    <p>Akurasi dalam melaksanakan gerakan dasar PBB sesuai dengan peraturan yang berlaku.</p>
+                    <div class="penilaian-percentage">25%</div>
                 </div>
-                <div class="penilaian-item">
-                    <h3>Kerapian Formasi (20%)</h3>
-                    <p>Kemampuan mempertahankan formasi yang rapi dan teratur selama penampilan.</p>
+                <div class="penilaian-card">
+                    <div class="penilaian-icon">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <h3>Semangat Kebangsaan</h3>
+                    <p>Penghayatan nilai-nilai kebangsaan, kedisiplinan, dan rasa cinta tanah air yang tercermin dalam penampilan.</p>
+                    <div class="penilaian-percentage">25%</div>
                 </div>
-                <div class="penilaian-item">
-                    <h3>Inovasi dan Kreativitas (15%)</h3>
-                    <p>Variasi formasi dan kreativitas dalam penyajian penampilan.</p>
-                </div>
-                <div class="penilaian-item">
-                    <h3>Penampilan Komandan (10%)</h3>
-                    <p>Kualitas pemberian komando, suara, dan kepemimpinan komandan regu.</p>
+                <div class="penilaian-card">
+                    <div class="penilaian-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Kreativitas</h3>
+                    <p>Variasi formasi, inovasi dalam penyajian, dan keunikan penampilan yang menarik.</p>
+                    <div class="penilaian-percentage">20%</div>
                 </div>
             </div>
         </div>
@@ -413,17 +484,6 @@
     <section id="galeri">
         <div class="container">
             <h2 class="section-title">Galeri Kegiatan</h2>
-            
-            <!-- Carousel -->
-            <div class="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1581093458799-eea1af5d4f5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');"></div>
-                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1581094288336-8db0e19dec1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');"></div>
-                    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1581094288336-8db0e19dec1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');"></div>
-                </div>
-                <button class="carousel-control prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="carousel-control next"><i class="fas fa-chevron-right"></i></button>
-            </div>
             
             <!-- Grid Galeri -->
             <div class="gallery-grid">
@@ -501,7 +561,7 @@
                 item.addEventListener('click', function() {
                     currentIndex = index % totalItems; // Use modulo to ensure valid index
                     updateCarousel();
-                    document.getElementById('galeri').scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('peserta').scrollIntoView({ behavior: 'smooth' });
                 });
             });
         });
